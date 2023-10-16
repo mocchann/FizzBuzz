@@ -13,11 +13,13 @@ class NumberConverter
 
     function convert(int $n): string
     {
-        $result = "";
+        $carry = "";
         foreach ($this->rules as $rule) {
-            $result .= $rule->replace($n);
+            if ($rule->match($carry, $n)) {
+                $carry = $rule->apply($carry, $n);
+            }
         }
 
-        return $result;
+        return $carry;
     }
 }
