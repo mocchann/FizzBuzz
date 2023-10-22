@@ -3,6 +3,7 @@
 namespace FizzBuzz\App;
 
 use FizzBuzz\Core\NumberConverter;
+use FizzBuzz\Core\OutputInterface;
 use PHPUnit\Framework\TestCase;
 
 class FizzBuzzSequencePrinterTest extends TestCase

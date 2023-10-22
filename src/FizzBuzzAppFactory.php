@@ -3,8 +3,9 @@
 namespace FizzBuzz;
 
 use FizzBuzz\App\FizzBuzzSequencePrinter;
-use FizzBuzz\App\OutputInterface;
 use FizzBuzz\Core\NumberConverter;
+use FizzBuzz\Core\OutputInterface;
+use FizzBuzz\Core\ReplaceRuleInterface;
 use FizzBuzz\Spec\CyclicNumberRule;
 use FizzBuzz\Spec\PassThroughRule;
 

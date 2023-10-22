@@ -4,7 +4,7 @@ use FizzBuzz\FizzBuzzAppFactory;
 
 class App
 {
-    public function main(): void
+    public static function main(): void
     {
         $factory = new FizzBuzzAppFactory();
         $printer = $factory->create();

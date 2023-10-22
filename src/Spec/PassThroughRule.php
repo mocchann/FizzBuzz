@@ -1,6 +1,8 @@
 <?php
 
-namespace FizzBuzz\Core\ReplaceRuleInterface;
+namespace FizzBuzz\Spec;
+
+use FizzBuzz\Core\ReplaceRuleInterface;
 
 class PassThroughRule implements ReplaceRuleInterface
 {

@@ -2,7 +2,7 @@
 
 namespace FizzBuzz\Spec;
 
-use FizzBuzz\Core\ReplaceRuleInterface\PassThroughRule;
+use FizzBuzz\Spec\PassThroughRule;
 use PHPUnit\Framework\TestCase;
 
 class PassThroughRuleTest extends TestCase
