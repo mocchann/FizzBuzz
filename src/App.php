@@ -1,12 +1,13 @@
 <?php
 
-use FizzBuzz\App\FizzBuzzSequencePrinter;
+use FizzBuzz\FizzBuzzAppFactory;
 
 class App
 {
     public function main(): void
     {
-        $printer = new FizzBuzzSequencePrinter();
+        $factory = new FizzBuzzAppFactory();
+        $printer = $factory->create();
         $printer->printRange(1, 100);
     }
 }
