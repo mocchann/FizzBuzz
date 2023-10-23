@@ -24,7 +24,11 @@ class FizzBuzzSequencePrinterTest extends TestCase
         $conveter = $this->createMock(NumberConverter::class);
         $conveter->expects($this->exactly(3))
             ->method('convert')
-            ->will($this->returnValueMap([1, "1"], [2, "2"], [3, "Fizz"]));
+            ->will($this->returnValueMap([
+                [1, "1"],
+                [2, "2"],
+                [3, "Fizz"]
+            ]));
 
         $output = $this->createMock(OutputInterface::class);
         $output->expects($this->exactly(3))
