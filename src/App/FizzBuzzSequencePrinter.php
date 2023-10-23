@@ -3,6 +3,7 @@
 namespace FizzBuzz\App;
 
 use FizzBuzz\Core\NumberConverter;
+use FizzBuzz\Core\OutputInterface;
 
 class FizzBuzzSequencePrinter
 {
@@ -19,9 +20,4 @@ class FizzBuzzSequencePrinter
             $this->output->write($formattedText);
         }
     }
-}
-
-interface OutputInterface
-{
-    public function write(string $data): void;
 }

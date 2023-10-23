@@ -2,7 +2,7 @@
 
 namespace FizzBuzz\Core;
 
-use FizzBuzz\Core\ReplaceRuleInterface\CyclicNumberRule;
+use FizzBuzz\Spec\CyclicNumberRule;
 use PHPUnit\Framework\TestCase;
 
 class CyclicNumberRuleTest extends TestCase
@@ -11,7 +11,7 @@ class CyclicNumberRuleTest extends TestCase
     {
         $rule = new CyclicNumberRule(0, "Buzz");
         $this->assertEquals("Buzz", $rule->apply("", 0));
-        $this->aasertEquals("FizzBuzz", $rule->apply("Fizz", 0));
+        $this->assertEquals("FizzBuzz", $rule->apply("Fizz", 0));
     }
 
     public function testMatch()
