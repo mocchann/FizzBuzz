@@ -1,15 +1,19 @@
 services:
+  _defaults:
+    autowire: true
+
+  FizzBuzz\:
+    resource: '../src/*'
+
   FizzBuzz\App\FizzBuzzSequencePrinter:
     public: true
-    arguments:
-      $fizzBuzz: '@FizzBuzz\Core\NumberConverter'
-      $output: '@FizzBuzz\App\OutputInterface'
 
   FizzBuzz\Core\NumberConverter:
-    $rules:
-      - '@fizzbuzz.rule.fizz'
-      - '@fizzbuzz.rule.buzz'
-      - '@FizzBuzz\Spec\PassThroughRule'
+    arguments:
+      $rule:
+        - '@fizzbuzz.rule.fizz'
+        - '@fizzbuzz.rule.buzz'
+        - '@FizzBuzz\Spec\PassThroughRule'
 
   fizzbuzz.rule.fizz:
     class: FizzBuzz\Spec\CyclicNumberRule
@@ -18,8 +22,3 @@ services:
   fizzbuzz.rule.buzz:
     class: FizzBuzz\Spec\CyclicNumberRule
     arguments: [5, 'Buzz']
-
-  FizzBuzz\Spec\PassThroughRule: ~
-
-  FizzBuzz\App\OutputInterface:
-    class: FizzBuzz\ConsoleOutput
